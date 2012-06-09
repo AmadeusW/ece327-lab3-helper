@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ece327lab3helper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Background="#FF464646" PreviewKeyDown="Window_PreviewKeyDown">
+        Title="ECE 327 Lab 3 helper" Height="350" Width="525" Background="#FF262626" PreviewKeyDown="Window_PreviewKeyDown" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -9,13 +9,28 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <RichTextBox HorizontalAlignment="Stretch" Name="inputFileBox" VerticalAlignment="Stretch" Margin="0"  Grid.Column="0" Grid.Row="0" FontFamily="Consolas" FontSize="11" Background="#FF464646" Foreground="White" />
-        <RichTextBox HorizontalAlignment="Stretch" Name="resultBox" VerticalAlignment="Stretch" Margin="0" Grid.Column="1" Grid.Row="0" FontFamily="Consolas" FontSize="11" Background="#FF464646" Foreground="White" />
-        <RichTextBox HorizontalAlignment="Stretch" Name="countSoFarBox" VerticalAlignment="Stretch" Margin="0" Grid.Column="2" Grid.Row="0" FontFamily="Consolas" FontSize="11" Background="#FF464646" Foreground="White" />
-        <TextBlock Grid.Column="2" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="28,38,0,0" Name="resultBlock1" Text="Count = 0" VerticalAlignment="Top" Foreground="White"/>
-        <Button Content="Button" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="36,37,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        
+        <TextBlock Padding="2 0 6 0" Foreground="White" Grid.Row="0" Grid.Column="0">Input data:</TextBlock>
+        <TextBlock Padding="2 0 6 0" Foreground="White" Grid.Row="0" Grid.Column="1">Calculation results:</TextBlock>
+        <TextBlock Padding="2 0 6 0" Foreground="White" Grid.Row="0" Grid.Column="2">Count so far:</TextBlock>
+        
+        <RichTextBox HorizontalAlignment="Stretch" Name="inputFileBox" VerticalAlignment="Stretch" Margin="0"  Grid.Column="0" Grid.Row="1" FontFamily="Consolas" FontSize="11" Background="#FF262626" Foreground="White" IsReadOnly="True"/>
+        <RichTextBox HorizontalAlignment="Stretch" Name="resultBox" VerticalAlignment="Stretch" Margin="0" Grid.Column="1" Grid.Row="1" FontFamily="Consolas" FontSize="11" Background="#FF2A2A2A" Foreground="White"  IsReadOnly="True"/>
+        <RichTextBox HorizontalAlignment="Stretch" Name="countSoFarBox" VerticalAlignment="Stretch" Margin="0" Grid.Column="2" Grid.Row="1" FontFamily="Consolas" FontSize="11" Background="#FF2E2E2E" Foreground="White"  IsReadOnly="True"/>
+        
+        <TextBlock Grid.Column="2" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="28,38,0,0" Name="resultBlock1" Text="Count = 0" VerticalAlignment="Top" Foreground="White"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <Button HorizontalAlignment="Stretch" Name="button1" VerticalAlignment="Top" Click="loadButton_Click" Tag="0" Content="Test 0"/>
+            <Button HorizontalAlignment="Stretch" Name="button2" VerticalAlignment="Top" Click="loadButton_Click" Tag="1" Content="Test 1"/>
+            <Button HorizontalAlignment="Stretch" Name="button3" VerticalAlignment="Top" Click="loadButton_Click" Tag="2" Content="Test 2"/>
+            <Button HorizontalAlignment="Stretch" Name="button4" VerticalAlignment="Top" Click="loadButton_Click" Tag="3" Content="Test 3"/>
+            <Button HorizontalAlignment="Stretch" Name="button5" VerticalAlignment="Top" Click="loadButton_Click" Tag="4" Content="Test 4"/>
+            <Button HorizontalAlignment="Stretch" Name="button6" VerticalAlignment="Top" Click="loadButton_Click" Tag="5" Content="Test 5"/>
+        </StackPanel>
     </Grid>
 </Window>

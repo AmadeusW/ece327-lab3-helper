@@ -17,6 +17,7 @@ namespace ece327lab3helper
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// Amadeus Wieczorek 2012
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -79,8 +80,6 @@ namespace ece327lab3helper
             }
 
 
-
-
             // Now calculate the results
             for (int i = 0; i < 16; i++)
             {
@@ -103,9 +102,9 @@ namespace ece327lab3helper
             }
 
 
-
+            // Set up the environment
             currentColumn = 0;
-            currentRow = 0;
+            currentRow = 2;
 
             redrawScreen();
 
@@ -183,9 +182,18 @@ namespace ece327lab3helper
             box.Document = displayedText;
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void loadButton_Click(object sender, RoutedEventArgs e)
         {
-            loadTestData(@"C:\Users\Amadeus\Documents\Visual Studio 2010\Projects\ece327lab3helper\ece327lab3helper\bin\Debug\test1.txt");
+            //loadTestData(@"C:\Users\Amadeus\Documents\Visual Studio 2010\Projects\ece327lab3helper\ece327lab3helper\bin\Debug\test1.txt");
+            try
+            {
+                loadTestData(String.Format("test{0}.txt", (sender as Button).Tag));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not load file test" + (sender as Button).Tag + ".txt \n Exception: " +ex);
+            }
+            
         }
 
         private void inputFileBox_SelectionChanged(object sender, RoutedEventArgs e)
